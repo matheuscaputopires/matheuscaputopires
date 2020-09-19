@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,CAAA;EACD,cAAc,CAAA,eAAC;EACf,eAAe,CAAA,eAAC;EAChB,aAAa,CAAA,cAAC;CACjB;;AAGD,AAAA,cAAc,CAAC;EACX,gBAAgB,EAAE,yHAAuH;CAC5I;;AACD,AAAA,YAAY,CAAC;EACT,gBAAgB,EAAE,8EAA6E;CAClG;;AACD,AAAA,aAAa,CAAC;EACV,gBAAgB,EAAE,8EAA6E;CAClG",
+    "sources": [
+        "colorDesign.scss"
+    ],
+    "names": [],
+    "file": "colorDesign.css"
+}

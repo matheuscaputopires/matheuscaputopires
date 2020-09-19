@@ -1,0 +1,350 @@
+:root {
+    /* new colors */
+    --nav--bars: rgb(0, 76, 62);
+    --light--green: rgb(0, 70, 62);
+    --middle--green: rgb(0, 70, 63);
+    --dark--green: rgb(0, 27, 9);
+    --submenus: #709dac;
+    --text: white;
+    --text--highlight: #4F4F4F;
+    --box--highlight: #56cbf298;
+    --shaddow--color: gray;
+    --almost-white: #f0f0f0;
+    --border--color: darkblue;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600');
+
+* {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text);
+    text-decoration: none;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+
+    height: 100vh;
+    width: 100vw;
+
+    background-color: var(--light--green)
+
+    // display: grid;
+    // grid-template-columns: 1fr;
+    // grid-template-rows: 55px 1fr;
+
+    // overflow: hidden;
+}
+
+.full_container {
+    height: 100%;
+    width: 100%;
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 55px 1fr;
+
+    overflow: hidden;
+}
+
+/* Header Styles */
+header {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    
+    display: grid;
+    grid-template-columns: 5px 95px 0px repeat(6, 1fr) 1fr 1px;
+    grid-template-rows: 45px;
+    gap: 2px;
+
+    background-color: var(--light--green);
+    z-index: 99;
+}
+
+.logo_name{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    display: inline-flex;
+    margin-top: 10px;
+}
+
+header div{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+header div button, header div button p{
+    height: 100%;
+    width: 100%;
+    background: none;
+    border: none;
+    align-self: center;
+    top: 50%;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.gradient:hover {
+    animation: gradient 0.1s ease-out;
+    background-image: linear-gradient(90deg, var(--light--green), var(--middle--green) 5%, var(--dark--green), var(--middle--green) 95%, var(--light--green));
+}
+
+.access button img {
+    height: 100%;
+    width: auto;
+    display: none;
+    background: none;
+    border: none;
+    padding: 0 3px 0 3px;
+    align-self: right;
+    width: 25px;
+    height: 25px;
+    filter: invert(1);
+}
+
+header button:focus {
+    border-color: transparent;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-shadow: none;
+    // animation: gradientSelection 0.1s ease-out;
+    // background-color: var(--dark--green);
+    border-radius: 5px;
+}
+
+.hamburger_selector {
+    position: fixed;
+    border: none;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-59%);
+    width: 45px;
+    height: 45px;
+    opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+}
+
+.hamburger_selector:checked {
+    border: none;
+    margin: none;
+    padding: none;
+}
+
+.toggle_btn {
+    background-color: transparent;
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 45px;
+    width: 45px;
+    border: none;
+    border-radius: 50%;
+    z-index: 1;
+    transition: all 0.3s ease 0s;
+}
+
+.toggle_btn .hamburger {
+    position: relative;
+    margin-top:10px;
+}
+
+.toggle_btn span {
+    display: block;
+    margin: 4px 0 0 1px;
+    background-color: white;
+    width: 30px;
+    height: 4px;
+    border-radius: 4px;
+    z-index: 2;
+    transition: all 0.2s ease-in 0s;
+}
+
+.hamburger_selector:checked {
+    border: none;
+    margin: none;
+    padding: none;
+}
+
+.hamburger_selector:checked ~ .toggle_btn .normal {
+    background-color: transparent;
+}
+
+.hamburger_selector:checked ~ .toggle_btn .round {
+    height: 30px !important;
+    border-radius: 50%;
+    margin-top: -5px;
+}
+
+// Styles for my dropdown_links
+.drop_menu,.hamburger_selector,.toggle_btn,.hamburger,.round,.normal,.normal,.dropdown_links {
+    transition: none;
+    visibility: hidden;
+}
+
+.drop_menu nav {
+    background-color: var(--light--green);
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, 15px);
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 4px;
+    /* hide and disable clicking or pointing on the links */
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+}
+
+.drop_menu nav div {
+    width: 100%;
+    padding: 10px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.hamburger_selector:checked ~ nav {
+    opacity: 1;
+    pointer-events: all;
+    transform: translate(-50%, 45px);
+}
+
+.drop_menu nav div:hover {
+    background-color: var(--dark--green);
+    border-radius: 4px;
+}
+
+// End of styles for dropdown dropdown_links
+
+// End of styles for header
+
+// Styles for the main content
+.middle_container {
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    scrollbar-style: none;
+    scrollbar-width: none;
+}
+
+.middle_container::-webkit-scrollbar {
+    display: none;
+}
+
+.middle_container section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: center;
+}
+
+section h1{
+    font-size: 2rem;
+}
+
+section p{
+    font-size: 1.5rem;
+}
+// End of styles for the main content
+
+@media screen and (max-width: 800px) {
+    header {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        display: grid;
+        grid-template-columns: 5px 95px 1fr repeat(6, 0px) 1fr 0px;
+        grid-template-rows: 45px;
+        gap: 1px;
+
+        background-color: var(--light--green);
+        z-index: 99;
+    }
+
+    .gradient {
+        visibility: hidden;
+    }
+
+    .gradient:hover {
+        animation: none;
+        background-image: none;
+        background-color: transparent;
+    }
+
+    .drop_menu,.access,.drop_menu,.hamburger_selector,.toggle_btn,.hamburger,.round,.normal,.normal,.dropdown_links{
+        visibility: visible;
+    }
+
+    .access button p{
+        display: none;
+    }
+
+    .access button img{
+        display: flex;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+    .access {
+        background-color: transparent;
+    }
+    
+    .access:hover{
+        background-color: transparent;
+    }
+
+    header button:focus {
+        border-color: transparent;
+        outline: none;
+        border: none;
+        text-decoration: none;
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+
+}
+
+/* Animations */
+@keyframes gradient {
+    0% {background-image: linear-gradient(90deg, var(--light--green), var(--lignt--green) 50%, var(--dark--green) 50%, var(--light--green) 50%, var(--light--green));}
+    25% {background-image: linear-gradient(90deg, var(--light--green), var(--middle--green) 45%, var(--dark--green), var(--middle--green) 55%, var(--light--green));}
+    50% {background-image: linear-gradient(90deg, var(--light--green), var(--middle--green) 35%, var(--dark--green), var(--middle--green) 65%, var(--light--green));}
+    75% {background-image: linear-gradient(90deg, var(--light--green), var(--middle--green) 25%, var(--dark--green), var(--middle--green) 75%, var(--light--green));}
+    100% {background-image: linear-gradient(90deg, var(--light--green), var(--middle--green) 20%, var(--dark--green), var(--middle--green) 80%, var(--light--green));}
+}
+@keyframes gradientSelection {
+    0% {background-image: linear-gradient(90deg, var(--light--green), var(--middle--green) 18%, var(--dark--green), var(--middle--green) 82%, var(--light--green));}
+    25% {background-image: linear-gradient(90deg, var(--light--green), var(--middle--green) 15%, var(--dark--green), var(--middle--green) 85%, var(--light--green));}
+    35% {background-image: linear-gradient(90deg, var(--light--green), var(--middle--green) 8%, var(--dark--green), var(--middle--green) 92%, var(--light--green));}
+    50% {background-image: linear-gradient(90deg, var(--light--green), var(--middle--green) 4%, var(--dark--green), var(--middle--green) 96%, var(--light--green));}
+    75% {background-image: linear-gradient(90deg, var(--light--green), var(--middle--green) 2%, var(--dark--green), var(--middle--green) 98%, var(--light--green));}
+    100% {background-image: linear-gradient(90deg, var(--light--green), var(--middle--green) 1%, var(--dark--green), var(--middle--green) 99%, var(--light--green));}
+}
+@keyframes mobileSelection {
+}
+/* End of animations */
