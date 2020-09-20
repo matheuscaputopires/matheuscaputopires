@@ -37,24 +37,23 @@ body {
 .full_container {
   height: 100%;
   width: 100%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  -ms-grid-rows: 55px 1fr;
-      grid-template-rows: 55px 1fr;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   overflow: hidden;
 }
 
-/* Header Styles */
 header {
-  -ms-grid-row: 1;
-      grid-row-start: 1;
-  grid-row-end: 2;
+  height: 45px;
+  margin-top: 5px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 5px 95px 0px (1fr)[6] 1fr 1px;
-      grid-template-columns: 5px 95px 0px repeat(6, 1fr) 1fr 1px;
+  -ms-grid-columns: 10px 95px 0px (1fr)[6] 1fr 1px;
+      grid-template-columns: 10px 95px 0px repeat(6, 1fr) 1fr 1px;
   -ms-grid-rows: 45px;
       grid-template-rows: 45px;
   gap: 2px;
@@ -66,6 +65,8 @@ header {
   -ms-grid-column: 2;
       grid-column-start: 2;
   grid-column-end: 3;
+  height: 45px;
+  overflow: hidden;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -163,7 +164,7 @@ header button:focus {
 
 .toggle_btn .hamburger {
   position: relative;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .toggle_btn span {
@@ -192,12 +193,6 @@ header button:focus {
   height: 30px !important;
   border-radius: 50%;
   margin-top: -5px;
-}
-
-.drop_menu, .hamburger_selector, .toggle_btn, .hamburger, .round, .normal, .normal, .dropdown_links {
-  -webkit-transition: none;
-  transition: none;
-  visibility: hidden;
 }
 
 .drop_menu nav {
@@ -265,7 +260,6 @@ header button:focus {
   scroll-behavior: smooth;
   -ms-scroll-snap-type: y mandatory;
       scroll-snap-type: y mandatory;
-  scrollbar-style: none;
   scrollbar-width: none;
 }
 
@@ -293,23 +287,33 @@ header button:focus {
   scroll-snap-align: center;
 }
 
-section h1 {
+.middle_container .content {
+  margin: 3%;
+}
+
+.middle_container section h1 {
   font-size: 2rem;
 }
 
-section p {
+.middle_container section p {
   font-size: 1.5rem;
 }
 
-@media screen and (max-width: 800px) {
+.drop_menu, .hamburger_selector, .toggle_btn, .hamburger, .round, .normal, .normal, .dropdown_links {
+  -webkit-transition: none;
+  transition: none;
+  visibility: hidden;
+}
+
+@media screen and (max-width: 750px) {
   header {
     -ms-grid-row: 1;
         grid-row-start: 1;
     grid-row-end: 2;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 5px 95px 1fr (0px)[6] 1fr 0px;
-        grid-template-columns: 5px 95px 1fr repeat(6, 0px) 1fr 0px;
+    -ms-grid-columns: 10px 95px 1fr (0px)[6] 1fr 0px;
+        grid-template-columns: 10px 95px 1fr repeat(6, 0px) 1fr 0px;
     -ms-grid-rows: 45px;
         grid-template-rows: 45px;
     gap: 1px;
@@ -325,8 +329,14 @@ section p {
     background-image: none;
     background-color: transparent;
   }
+  .dropdown_links {
+    -webkit-box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.5);
+            box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.5);
+  }
   .drop_menu, .access, .drop_menu, .hamburger_selector, .toggle_btn, .hamburger, .round, .normal, .normal, .dropdown_links {
     visibility: visible;
+    -webkit-transition: all;
+    transition: all;
   }
   .access button p {
     display: none;
@@ -456,7 +466,5 @@ section p {
   }
 }
 
-@-webkit-keyframes mobileSelection {}
-
-@keyframes mobileSelection {}/* End of animations */
+/* End of animations */
 /*# sourceMappingURL=mainStyle.css.map */

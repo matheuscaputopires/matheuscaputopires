@@ -35,32 +35,24 @@ body{
     width: 100vw;
 
     background-color: var(--light--green)
-
-    // display: grid;
-    // grid-template-columns: 1fr;
-    // grid-template-rows: 55px 1fr;
-
-    // overflow: hidden;
 }
 
 .full_container {
     height: 100%;
     width: 100%;
     
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 55px 1fr;
+    display: flex;
+    flex-direction: column;
 
     overflow: hidden;
 }
 
-/* Header Styles */
+// Header Styles
 header {
-    grid-row-start: 1;
-    grid-row-end: 2;
-    
+    height: 45px;
+    margin-top: 5px;
     display: grid;
-    grid-template-columns: 5px 95px 0px repeat(6, 1fr) 1fr 1px;
+    grid-template-columns: 10px 95px 0px repeat(6, 1fr) 1fr 1px;
     grid-template-rows: 45px;
     gap: 2px;
 
@@ -71,6 +63,8 @@ header {
 .logo_name{
     grid-column-start: 2;
     grid-column-end: 3;
+    height: 45px;
+    overflow: hidden;
     display: inline-flex;
     margin-top: 10px;
 }
@@ -157,7 +151,7 @@ header button:focus {
 
 .toggle_btn .hamburger {
     position: relative;
-    margin-top:10px;
+    margin-top:15px;
 }
 
 .toggle_btn span {
@@ -185,12 +179,6 @@ header button:focus {
     height: 30px !important;
     border-radius: 50%;
     margin-top: -5px;
-}
-
-// Styles for my dropdown_links
-.drop_menu,.hamburger_selector,.toggle_btn,.hamburger,.round,.normal,.normal,.dropdown_links {
-    transition: none;
-    visibility: hidden;
 }
 
 .drop_menu nav {
@@ -231,9 +219,7 @@ header button:focus {
     background-color: var(--dark--green);
     border-radius: 4px;
 }
-
 // End of styles for dropdown dropdown_links
-
 // End of styles for header
 
 // Styles for the main content
@@ -243,7 +229,7 @@ header button:focus {
     overflow-y: scroll;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
-    scrollbar-style: none;
+    // scrollbar-style: none;
     scrollbar-width: none;
 }
 
@@ -262,28 +248,38 @@ header button:focus {
     scroll-snap-align: center;
 }
 
-section h1{
+.middle_container .content {
+    margin: 3%;
+}
+
+.middle_container section h1{
     font-size: 2rem;
 }
 
-section p{
+.middle_container section p{
     font-size: 1.5rem;
 }
 // End of styles for the main content
 
-@media screen and (max-width: 800px) {
+// Styles for my dropdown_links
+.drop_menu,.hamburger_selector,.toggle_btn,.hamburger,.round,.normal,.normal,.dropdown_links {
+    transition: none;
+    visibility: hidden;
+}
+
+@media screen and (max-width: 750px) {
     header {
         grid-row-start: 1;
         grid-row-end: 2;
         display: grid;
-        grid-template-columns: 5px 95px 1fr repeat(6, 0px) 1fr 0px;
+        grid-template-columns: 10px 95px 1fr repeat(6, 0px) 1fr 0px;
         grid-template-rows: 45px;
         gap: 1px;
-
+        
         background-color: var(--light--green);
         z-index: 99;
     }
-
+    
     .gradient {
         visibility: hidden;
     }
@@ -294,8 +290,13 @@ section p{
         background-color: transparent;
     }
 
+    .dropdown_links {
+        box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.5);
+    }
+
     .drop_menu,.access,.drop_menu,.hamburger_selector,.toggle_btn,.hamburger,.round,.normal,.normal,.dropdown_links{
         visibility: visible;
+        transition: all;
     }
 
     .access button p{
@@ -344,7 +345,5 @@ section p{
     50% {background-image: linear-gradient(90deg, var(--light--green), var(--middle--green) 4%, var(--dark--green), var(--middle--green) 96%, var(--light--green));}
     75% {background-image: linear-gradient(90deg, var(--light--green), var(--middle--green) 2%, var(--dark--green), var(--middle--green) 98%, var(--light--green));}
     100% {background-image: linear-gradient(90deg, var(--light--green), var(--middle--green) 1%, var(--dark--green), var(--middle--green) 99%, var(--light--green));}
-}
-@keyframes mobileSelection {
 }
 /* End of animations */
