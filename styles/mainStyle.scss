@@ -66,7 +66,7 @@ header {
     height: 45px;
     overflow: hidden;
     display: inline-flex;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 header div{
@@ -248,10 +248,6 @@ header button:focus {
     scroll-snap-align: center;
 }
 
-.middle_container .content {
-    margin: 3%;
-}
-
 .middle_container section h1{
     font-size: 2rem;
 }
@@ -269,8 +265,7 @@ header button:focus {
 
 @media screen and (max-width: 750px) {
     header {
-        grid-row-start: 1;
-        grid-row-end: 2;
+        height: 45px;
         display: grid;
         grid-template-columns: 10px 95px 1fr repeat(6, 0px) 1fr 0px;
         grid-template-rows: 45px;
@@ -306,7 +301,7 @@ header button:focus {
     .access button img{
         display: flex;
         position: absolute;
-        right: 10px;
+        right: 20px;
         top: 10px;
     }
 
@@ -326,8 +321,6 @@ header button:focus {
         box-shadow: none;
         background-color: transparent;
     }
-
-
 }
 
 /* Animations */

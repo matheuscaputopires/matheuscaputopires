@@ -14,9 +14,10 @@
     flex-direction:column;
 }
 
-.content {
+.middle_container .content {
+    // border: 1px solid white;
+    margin-right: 2.2%;
     position: relative;
-    height: 80%;
 }
 
 .content_container {
@@ -50,6 +51,7 @@
 
 .r_l .content_container p, .l_r .content_container p {
     width: 50%;
+    padding: 0 3%;
     text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
 }
 

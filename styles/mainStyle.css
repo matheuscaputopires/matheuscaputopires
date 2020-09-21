@@ -70,7 +70,7 @@ header {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 header div {
@@ -287,10 +287,6 @@ header button:focus {
   scroll-snap-align: center;
 }
 
-.middle_container .content {
-  margin: 3%;
-}
-
 .middle_container section h1 {
   font-size: 2rem;
 }
@@ -307,9 +303,7 @@ header button:focus {
 
 @media screen and (max-width: 750px) {
   header {
-    -ms-grid-row: 1;
-        grid-row-start: 1;
-    grid-row-end: 2;
+    height: 45px;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 10px 95px 1fr (0px)[6] 1fr 0px;
@@ -346,7 +340,7 @@ header button:focus {
     display: -ms-flexbox;
     display: flex;
     position: absolute;
-    right: 10px;
+    right: 20px;
     top: 10px;
   }
   .access {
