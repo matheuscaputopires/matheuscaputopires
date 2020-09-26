@@ -1,4 +1,10 @@
 :root {
+    
+    --nav--bars: rgb(0, 76, 62);
+    --light--green: rgb(0, 70, 62);
+    --middle--green: rgb(0, 70, 63);
+    --dark--green: rgb(0, 27, 9);
+    --dark--green--t: rgba(0, 27, 9, 0.637);
     --level-one: translateZ(3rem);
     --level-two: translateZ(6rem);
     --level-three: translateZ(9rem);
@@ -15,67 +21,170 @@
 }
 
 .middle_container .content {
-    // border: 1px solid white;
-    margin-right: 2.2%;
+    height: 100%;
+    width: 95%;
     position: relative;
+}
+
+.page_title {
+    font-size: clamp(2em, 6vw, 3.5em);
+    padding-top: 50px;
+    margin: 0;
+    border: 0;
 }
 
 .content_container {
     position: relative;
     height: 100%;
-}
-
-.l_r .content_container {
+    width: 100%;
     display: flex;
     flex-direction: row;
 }
 
 .r_l .content_container {
-    display: flex;
     flex-direction: row-reverse;
-}
-
-.r_l .text_container{
-    left: 100%;
-}
-
-.l_r .text_container{
-    left: 50%;
 }
 
 .text_container {
     position: relative;
-    transform: translateX(-50%);
-    place-self: center;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-justify: inter-word;
 }
 
-.r_l .content_container p, .l_r .content_container p {
-    width: 50%;
-    padding: 0 3%;
-    text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+.text_container p {
+    font-size: clamp(1.5em, 3vw, 2.5em);
 }
 
 .img_container {
-    // height: 250px;
-    // width: 350px;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    overflow: hidden;
-}
-
-.r_l .img_container{
-    left: 25%;
-}
-
-.l_r .img_container{
-    left: 75%;
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .img_container img {
+    border-radius: 2em;
+    box-shadow: 5px 5px var(--dark--green--t);
+    max-width: 95%;
+    max-height: 95%;
+    opacity: 0.8;
+}
+
+#quem_somos .img_container {
+    border-radius: 2em;
+    max-width: 95%;
+    max-height: 95%;
+}
+
+#como_funciona .text_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#como_funciona .text_container .passos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#como_funciona .text_container .passos div {
+    width: 33%;
+}
+#como_funciona .text_container h1 {
+    font-size: clamp(1.5em, 3.5vw, 2.5em);
+}
+#como_funciona .text_container p {
+    font-size: clamp(1em, 3vw, 2em);
+}
+#list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.list p{
+    margin: 0;
+    width: 120%;
     position: relative;
-    height:100%;
-    width: auto;
+    counter-increment: section;
+}
+.list p:before {
+    content: counter(section);
+    left: 100%;
+    position: absolute;
+    left: -60px;
+    border-radius: 50%;
+    padding: 15px;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(105, 81, 212);
+    text-align:center;
+    text-transform: center;
+    color: white;
+    font-size: 25px;
+}
+
+.the_card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.4s ease-in-out;
+    border-radius: 2em;
+}
+
+.the_card h1 {
+    font-size: clamp(2em, 3.5vw, 3em);
+}
+
+.the_card:hover .card_front{
+    transform: rotateY(180deg);
+}
+
+.the_card:hover .card_back{
+    transform: rotateY(0deg);
+}
+
+.card_front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    color: #333;
+    border-radius: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-justify: inter-word;
+    transition: all 0.4s ease-in-out;
+}
+
+.card_back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    color: #333;
+    transform: rotateY(180deg);
+    border-radius: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-justify: inter-word;
+    transition: all 0.4s ease-in-out;
 }
 
 @media screen and (max-width: 750px) {
@@ -84,21 +193,13 @@
         display: flex;
         flex-direction: column;
     }
-
-    .r_l .img_container, .l_r .img_container{
-        left: 50%;
-        top: 0%;
-    }
-
     .img_container {
-        width: 350px;
-        height: 250px;
         position: relative;
-        transform: translateX(-50%);
-        overflow: hidden;
+        width: 100%;
     }
 
-    .r_l .content_container p, .l_r .content_container p {
+    .text_container {
+        position: relative;
         width: 100%;
     }
 }

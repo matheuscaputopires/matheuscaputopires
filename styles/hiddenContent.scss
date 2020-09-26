@@ -1,0 +1,42 @@
+:root {
+    /* new colors */
+    --nav--bars: rgb(0, 76, 62);
+    --light--green: rgb(0, 70, 62);
+    --middle--green: rgb(0, 70, 63);
+    --dark--green: rgb(0, 27, 9);
+    --submenus: #709dac;
+    --text: white;
+    --text--highlight: #4F4F4F;
+    --box--highlight: #56cbf298;
+    --shaddow--color: gray;
+    --almost-white: #f0f0f0;
+    --border--color: darkblue;
+}
+
+#vantagens .text_container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card_item {
+    width: clamp(130px, 15%, 200px);
+    height: clamp(80px, 10%, 200px);
+    margin: 5px;
+    background-color: white;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 5px 5px var(--dark--green--t);
+}
+
+.card_item h2 {
+    color: black;
+}
+
+.hidden_content {
+    display: none;
+}
+
