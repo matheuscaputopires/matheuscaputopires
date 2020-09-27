@@ -22,15 +22,15 @@
 }
 
 .coluna h1 {
-  font-size: clamp(1em, 3vw, 2em);
+  font-size: clamp(1em, 3vw, 2em) !important;
 }
 
 .coluna h2 {
-  font-size: clamp(0.8em, 2.8vw, 1.8em);
+  font-size: clamp(0.8em, 2.8vw, 1.8em) !important;
 }
 
 .coluna p {
-  font-size: clamp(0.4em, 2.4vw, 1.4em);
+  font-size: clamp(0.4em, 2.4vw, 1.4em) !important;
   margin: 0;
   padding: 0;
   border: 0;
@@ -54,6 +54,29 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.coluna a {
+  font-size: clamp(0.24em, 2.24vw, 1.25em);
+  color: rgba(168, 238, 255, 0.938);
+}
+
+.coluna .group {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.coluna .group h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.coluna .group h1 {
   margin: 0;
   padding: 0;
   border: 0;
@@ -83,6 +106,13 @@
 
 .linha span {
   width: 5vw;
+}
+
+.linha img {
+  height: clamp(50px, 10vh, 250px);
+  padding: 2vh 2vw;
+  -webkit-filter: invert(1);
+          filter: invert(1);
 }
 
 .transfer {
