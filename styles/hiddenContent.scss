@@ -27,6 +27,7 @@
     margin:8px;
     background-color: var(--almost-white);
     border-radius: 25px;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,6 +40,13 @@
     background-color: white;
     box-shadow: 8px 8px var(--dark--green);
     transform: translate(-1%, -1%)
+}
+.click_icon {
+    height: clamp(20px, 2vw, 40px);
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    opacity: 0.4;
 }
 
 .card_item h1 {
@@ -134,7 +142,6 @@
     padding: 20px;
     font-size: clamp(0.8em, 5vw, 2em);
 }
-
 
 @media screen and (max-width: 700px) {
     .card_item {

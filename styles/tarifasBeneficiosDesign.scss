@@ -13,32 +13,41 @@
     --border--color: darkblue;
 }
 
-.estrutura h1 {
+.tarifas .text_container {
+    width: 100%;
+}
+.beneficios .text_container {
+    width: 100%;
+}
+
+.coluna h1 {
     font-size: clamp(1em, 3vw, 2em);
 }
 
-.estrutura h2 {
+.coluna h2 {
     font-size: clamp(0.8em, 2.8vw, 1.8em);
 }
 
-.estrutura p {
+.coluna p {
     font-size: clamp(0.4em, 2.4vw, 1.4em);
     margin: 0;
     padding: 0;
     border: 0;
 }
 
-.estrutura .coluna {
+.coluna {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
     margin: 0;
     padding: 0;
     border: 0;
 }
 
-.estrutura .linha {
+.linha {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -54,13 +63,22 @@
 }
 
 .transfer {
-    max-height: 100vh;
+    max-height: 70vw;
     opacity: 0.3;
-    border-radius: 50px;
+    border-radius: 25px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(-25deg);
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.growth {
+    max-height: 70vw;
+    opacity: 0.3;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 @media screen and (max-width: 550px) {

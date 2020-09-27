@@ -55,8 +55,8 @@ header {
   padding-top: 5px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 10px 95px 0px (1fr)[6] 1fr 1px;
-      grid-template-columns: 10px 95px 0px repeat(6, 1fr) 1fr 1px;
+  -ms-grid-columns: 10px 95px 0px (1fr)[7] 1fr 1px;
+      grid-template-columns: 10px 95px 0px repeat(7, 1fr) 1fr 1px;
   -ms-grid-rows: 45px;
       grid-template-rows: 45px;
   gap: 2px;
@@ -266,8 +266,6 @@ header button:focus {
   width: 100%;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  -ms-scroll-snap-type: y mandatory;
-      scroll-snap-type: y mandatory;
   scrollbar-width: none;
 }
 
@@ -311,8 +309,8 @@ header button:focus {
     padding-top: 5px;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 10px 95px 1fr (0px)[6] 1fr 0px;
-        grid-template-columns: 10px 95px 1fr repeat(6, 0px) 1fr 0px;
+    -ms-grid-columns: 10px 95px 1fr (0px)[7] 1fr 0px;
+        grid-template-columns: 10px 95px 1fr repeat(7, 0px) 1fr 0px;
     -ms-grid-rows: 45px;
         grid-template-rows: 45px;
     gap: 1px;

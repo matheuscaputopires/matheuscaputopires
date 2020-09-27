@@ -77,8 +77,12 @@ function displayData(card) {
     if (card.target.tagName == "H1") {
         document.querySelector('.hidden_text').innerHTML = card.target.previousElementSibling.innerHTML
     }
-    else {
+    else if (card.target.tagName == "DIV") {
         document.querySelector('.hidden_text').innerHTML = card.target.firstElementChild.innerHTML
+    }
+    else {
+        debugger
+        document.querySelector('.hidden_text').innerHTML = card.target.previousElementSibling.previousElementSibling.innerHTML
     }
     document.querySelector('.hidden_content').style.background = 'rgba(220, 220, 220, 0.985)'
     document.querySelector('.border').style.border = '2px solid black'

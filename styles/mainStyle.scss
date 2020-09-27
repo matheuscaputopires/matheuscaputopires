@@ -55,7 +55,7 @@ header {
     width: 100vw;
     padding-top: 5px;
     display: grid;
-    grid-template-columns: 10px 95px 0px repeat(6, 1fr) 1fr 1px;
+    grid-template-columns: 10px 95px 0px repeat(7, 1fr) 1fr 1px;
     grid-template-rows: 45px;
     gap: 2px;
 
@@ -236,7 +236,7 @@ header button:focus {
     width: 100%;
     overflow-y: scroll;
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
+    // scroll-snap-type: y mandatory;
     // scrollbar-style: none;
     scrollbar-width: none;
 }
@@ -273,7 +273,7 @@ header button:focus {
         width: 100vw;
         padding-top: 5px;
         display: grid;
-        grid-template-columns: 10px 95px 1fr repeat(6, 0px) 1fr 0px;
+        grid-template-columns: 10px 95px 1fr repeat(7, 0px) 1fr 0px;
         grid-template-rows: 45px;
         gap: 1px;
         
