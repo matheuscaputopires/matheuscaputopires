@@ -1,0 +1,92 @@
+:root {
+    /* new colors */
+    --nav--bars: rgb(0, 76, 62);
+    --light--green: rgb(0, 70, 62);
+    --middle--green: rgb(0, 70, 63);
+    --dark--green: rgb(0, 27, 9);
+    --submenus: #709dac;
+    --text: white;
+    --text--highlight: #4F4F4F;
+    --box--highlight: #56cbf298;
+    --shaddow--color: gray;
+    --almost-white: #f0f0f0;
+    --border--color: darkblue;
+}
+
+.estrutura h1 {
+    font-size: clamp(1em, 3vw, 2em);
+}
+
+.estrutura h2 {
+    font-size: clamp(0.8em, 2.8vw, 1.8em);
+}
+
+.estrutura p {
+    font-size: clamp(0.4em, 2.4vw, 1.4em);
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.estrutura .coluna {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.estrutura .linha {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.linha span {
+    width: 5vw;
+}
+
+.transfer {
+    max-height: 100vh;
+    opacity: 0.3;
+    border-radius: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+}
+
+@media screen and (max-width: 550px) {
+    .estrutura h1 {
+        font-size: clamp(1.2em, 3vw, 2.2em);
+        margin: 1vh 0 2vh 0;
+        padding: 0;
+        border: 0;
+    }
+    
+    .estrutura h2 {
+        font-size: clamp(1.1em, 2.8vw, 2.1em);
+        margin: 0 0 1vh 0;
+        padding: 0;
+        border: 0;
+    }
+    
+    .estrutura p {
+        font-size: clamp(0.8em, 2.8vw, 1.8em);
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    .transfer {
+        max-height: 90vh;
+        transform: translate(-50%, -50%) rotate(-10deg);
+    }
+}

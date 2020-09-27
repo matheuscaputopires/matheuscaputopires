@@ -59,3 +59,34 @@ let delay = 0.1;
 window.onload = function() {
     addStyle(duration, delay, ['name_svg', 'logo_svg']);
 };
+
+let cards = document.querySelectorAll('.card_item');
+for (var i = 0; i < cards.length; i++) {
+    cards[i].addEventListener("click", displayData);
+};
+
+
+function closeCard(event) {
+    document.querySelector('.hidden_content').style.background = 'transparent'
+    document.querySelector('.border').style.border = 'transparent'
+    document.querySelector('.hidden_content').style.zIndex = -1
+    document.querySelector('.border').style.zIndex = -1
+}
+
+function displayData(card) {
+    if (card.target.tagName == "H1") {
+        document.querySelector('.hidden_text').innerHTML = card.target.previousElementSibling.innerHTML
+    }
+    else {
+        document.querySelector('.hidden_text').innerHTML = card.target.firstElementChild.innerHTML
+    }
+    document.querySelector('.hidden_content').style.background = 'rgba(220, 220, 220, 0.985)'
+    document.querySelector('.border').style.border = '2px solid black'
+    document.querySelector('.hidden_content').style.zIndex = 7
+    document.querySelector('.border').style.zIndex = 8
+    document.querySelector('.close_btn').style.width = '40px'
+    document.querySelector('.close_btn').style.height = '40px'
+    document.querySelector('.close_btn').style.zIndex = 100
+    document.querySelector('.close_btn').style.transform = 'rotate(45deg)'
+    document.querySelector('.close_btn').addEventListener('click',closeCard)
+}

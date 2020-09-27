@@ -123,25 +123,49 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 
-#como_funciona .text_container .passos div {
-  width: 33%;
+.passos .passo {
+  counter-increment: cada_passo;
+  margin-right: 0px;
+  border-radius: 40px;
+  border: 2px dashed skyblue;
+  margin: 10px 0;
+}
+
+.passo p {
+  padding: 0 15px;
+}
+
+.passos .passo:before {
+  content: counter(cada_passo);
+  background-color: skyblue;
+  width: clamp(0.6em, 2.9vw, 1.5em);
+  height: clamp(0.6em, 2.9vw, 1.5em);
+  border-radius: 50%;
+  text-transform: center;
+  position: absolute;
+  left: -20px;
+  margin-top: -5px;
+  text-align: center;
+  text-transform: center;
+  color: white;
+  font-size: clamp(0.6em, 2.9vw, 1.5em);
 }
 
 #como_funciona .text_container h1 {
-  font-size: clamp(1.5em, 3.5vw, 2.5em);
+  font-size: clamp(1em, 3vw, 1.7em);
 }
 
 #como_funciona .text_container p {
-  font-size: clamp(1em, 3vw, 2em);
+  font-size: clamp(0.6em, 2.9vw, 1.5em);
 }
 
 #list {
@@ -161,26 +185,27 @@
 }
 
 .list p {
-  margin: 0;
-  width: 120%;
+  margin: 0 15px;
+  padding: 4px 15px;
   position: relative;
-  counter-increment: section;
 }
 
-.list p:before {
-  content: counter(section);
-  left: 100%;
-  position: absolute;
-  left: -60px;
-  border-radius: 50%;
-  padding: 15px;
-  height: 25px;
-  width: 25px;
-  background-color: #6951d4;
-  text-align: center;
-  text-transform: center;
-  color: white;
-  font-size: 25px;
+.arrow {
+  border: solid skyblue;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 4px;
+  margin: 0 5px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
 }
 
 .the_card {
@@ -282,6 +307,15 @@
   .text_container {
     position: relative;
     width: 100%;
+  }
+  .text_container p {
+    font-size: clamp(1.2em, 2.7vw, 1.8em);
+  }
+  .page_title {
+    font-size: clamp(1.5em, 4vw, 2em);
+    padding-top: 50px;
+    margin: 0;
+    border: 0;
   }
 }
 /*# sourceMappingURL=cardDesign.css.map */

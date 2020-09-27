@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="styles/colorDesign.css">
         <link rel="stylesheet" href="styles/cardDesign.css">
         <link rel="stylesheet" href="styles/hiddenContent.css">
+        <link rel="stylesheet" href="styles/tarifasBeneficiosDesign.css">
         
         <title>CRpay</title>
     </head>
@@ -64,7 +65,7 @@
                             <button onclick="window.location.href='#trabalhe_conosco'">Trabalhe Conosco</button>
                         </div>
                         <div class="nav_button">
-                            <button onclick="window.location.href='https://crpay.com.br/login'">Acessar</button>
+                            <button onclick="window.location.href='https://app.crpay.com.br/login'">Acessar</button>
                         </div>
                     </nav>
                     <!-- Fim da barra de navegação mobile -->
@@ -88,14 +89,14 @@
                     <button onclick="window.location.href='#trabalhe_conosco'">Trabalhe Conosco</button>
                 </div>
                 <div class="access gradient">
-                    <button onclick="window.location.href='https://crpay.com.br/login'"><p>Acessar</p><img src="/icons/login.png" alt="login"></button>
+                    <button onclick="window.location.href='https://app.crpay.com.br/login'"><p>Acessar</p><img src="/icons/login.png" alt="login"></button>
                 </div>
             </header>
             <!-- Fim do cabeçalho -->
             
             <!-- Início da caixa central -->
             <div class="middle_container">
-                <section id="top" class="first_color">
+                <!-- <section id="top" class="first_color">
                     <div class="content l_r">
                         <h1 class="page_title">Bem Vindo à CRpay!</h1>
                         <div class="content_container">
@@ -113,7 +114,7 @@
                         <h1 class="page_title">Quem Somos</h1>
                         <div class="content_container">
                             <div class="text_container">
-                                <p>A CRPay é uma empresa de gerenciamento de pagamentos/recebimentos. Com uma conta no sistema, você pode tanto receber quanto pagar. Nossa solução de negócio contempla toda uma plataforma de pagamentos e recebimentos, lhe oferecendo controle total sobres seus lançamentos e permitindo uma integração eficaz com sistemas já em uso por você</p>
+                                <p>A CRPay é uma empresa de gerenciamento de pagamentos e recebimentos. Com uma conta no sistema, você pode tanto receber quanto pagar. Nossa solução de negócio contempla toda uma plataforma de pagamentos e recebimentos, lhe oferecendo controle total sobres seus lançamentos e permitindo uma integração eficaz com sistemas já em uso por você</p>
                             </div>
                             <div class="img_container">
                                 <div class="the_card">
@@ -135,20 +136,20 @@
                         <h1 class="page_title">Entenda como Funciona</h1>
                         <div class="content_container">
                             <div class="text_container">
-                                <h1>Para realizar pagamentos e recebimentos no sistema, é necessário que todas as partes envolvidas estejam cadastradas no sistema. A sequência de passos é:</h1>
+                                <h1>Para realizar pagamentos e recebimentos no sistema, é necessário que todas as partes envolvidas estejam cadastradas no sistema.</h1>
                                 <div class="passos">
-                                    <div id="list">
+                                    <div class='passo' id="list">
                                         <p>Se o cliente ainda não está cadastrado:</p>
                                         <div class="list">
-                                            <p>Instale o app CRpay (google play)</p>
-                                            <p>Efetue o cadastro</p>
-                                            <p>Cadastra o cartão de crédito</p>
+                                            <p><i class="arrow right"></i><span> </span> o app CRpay (google play)<span> </span><i class="arrow left"></i></p>
+                                            <p><i class="arrow right"></i><span> </span>Efetue o cadastro<span> </span><i class="arrow left"></i></p>
+                                            <p><i class="arrow right"></i><span> </span>Cadastre um cartão de crédito<span> </span><i class="arrow left"></i></p>
                                         </div>
                                     </div>
-                                    <div>
+                                    <div class='passo'>
                                         <p>A pessoa (física/jurídica) que vai receber realiza uma solicitação (movimentação/solicitar) para o cliente.</p>
                                     </div>
-                                    <div>
+                                    <div class='passo'>
                                         <p>No app, pelo smartphone, o cliente vai em solicitações/pendentes e aprova a solicitação, se for o caso (O cliente pode cancelar também)</p>
                                     </div>
                                 </div>
@@ -162,115 +163,147 @@
                         <div class="content_container">
                             <div class="text_container">
                                 <div class="card_item">
-                                    <h1>Title</h1>
-                                    <div class="hidden_content">
-                                        <h2>Sem mensalidades, anuidade ou custo fixo</h2>
+                                    <div class="hidden">
+                                        <h2>Sem mensalidades, anuidade ou custo fixo!</h2>
                                         <p>Nao existe mensalidade ou anuidade para utilização do serviço ou aluguel do sistema. Quem paga pelo sistema não sofre ônus algum. É cobrado um pequeno percentual de quem recebe pelo sistema via cartão de crédito. Transferências internas são gratuitas, sem limite.</p>
                                     </div>
+                                    <h1>Sem Custo!</h1>
                                 </div>
                                 <div class="card_item">
-                                    <h1>Title</h1>
-                                    <div class="hidden_content">
-                                        <h2>Maximiza seu fluxo de caixa</h2>
+                                    <div class="hidden">
+                                        <h2>Maximiza seu fluxo de caixa!</h2>
                                         <p>Potencializa seu fluxo de caixa, aumentando o giro sem concessões à instituições financeiras de qualquer natureza. Isso significa só uma coisa: incremento no seu lucro</p>
                                     </div>
+                                    <h1>Fluxo de Caixa!</h1>
                                 </div>
                                 <div class="card_item">
-                                    <h1>Title</h1>
-                                    <div class="hidden_content">
-                                        <h2>Permite um desconto para vendas</h2>
+                                    <div class="hidden">
+                                        <h2>Permite um desconto para vendas!</h2>
                                         <p>Nas vendas a prazo você tem seu poder de compra disponibilizado imediatamente, o valor transacionado pode receber um desconto sem perca de seu lucro, o que lhe confere uma vantagem comercial significativa.</p>
                                     </div>
+                                    <h1>Desconto em Vendas!</h1>
                                 </div>
                                 <div class="card_item">
-                                    <h1>Title</h1>
-                                    <div class="hidden_content">
-                                        <h2>Elimina a necessidade de descontar suas vendas a prazo</h2>
+                                    <div class="hidden">
+                                        <h2>Elimina a necessidade de descontar suas vendas a prazo!</h2>
                                         <p>A CRPay permite que você use seu crédito futuro para honrar compromissos no presente. Você simplesmente não paga juros mais.</p>
                                     </div>
+                                    <h1>Adiantamento de Parcelas!</h1>
                                 </div>
                                 <div class="card_item">
-                                    <h1>Title</h1>
-                                    <div class="hidden_content">
-                                        <h2>Uma venda a prazo ou a vista não faz mais diferença</h2>
+                                    <div class="hidden">
+                                        <h2>Uma venda a prazo ou a vista não faz mais diferença!</h2>
                                         <p>Com a garantia e recebimento, a CRPay permite que você realize recebimentos de seus clientes e pague seus fornecedores de forma simples e prática. O preço a vista ou à prazo pode ser o mesmo.</p>
                                     </div>
+                                    <h1>Parcelas à Vista!</h1>
                                 </div>
                                 <div class="card_item">
-                                    <h1>Title</h1>
-                                    <div class="hidden_content">
-                                        <h2>Custo reduzido nas vendas a cartão</h2>
+                                    <div class="hidden">
+                                        <h2>Custo reduzido nas vendas a cartão!</h2>
                                         <p>Nas vendas realizadas via cartão é cobrado um percentual relativo ao valor transacionado. A taxa é mais competitiva que a operadora de cartão cobra.</p>
                                     </div>
+                                    <h1>Vantagens para Vendas no Cartão!</h1>
                                 </div>
                                 <div class="card_item">
-                                    <h1>Title</h1>
-                                    <div class="hidden_content">
-                                        <h2>Custo zero nas transferências internas == risco 0</h2>
+                                    <div class="hidden">
+                                        <h2>Custo zero nas transferências internas!</h2>
                                         <p>Para pagar seus fornecedores, não há custo. Transferência interna de recursos não tem custo. Sem custo, o risco é zero.</p>
                                     </div>
+                                    <h1>Transferências Gratuitas!</h1>
                                 </div>
                                 <div class="card_item">
-                                    <h1>Title</h1>
-                                    <div class="hidden_content">
-                                        <h2>Nunca mais pague juros de antecipação de realizável de curto, médio e longo prazo</h2>
+                                    <div class="hidden">
+                                        <h2>Nunca mais pague juros de antecipação de realizável de curto, médio e longo prazo!</h2>
                                         <p>Cliente CRPay nunca mais precisará antecipar suas vendas para fazer capital de giro. Nunca mais negocie seu fluxo de caixa, nunca mais pague juros de antecipação de suas vendas parceladas, seja no cartão ou cheque.</p>
                                     </div>
+                                    <h1>Sem Juros!</h1>
                                 </div>
                                 <div class="card_item">
-                                    <h1>Title</h1>
-                                    <div class="hidden_content">
-                                        <h2>Separa o conceito de disponibilidade do poder de compra da disponibilidade do recurso (dinheiro)</h2>
+                                    <div class="hidden">
+                                        <h2>Separa o conceito de disponibilidade do poder de compra da disponibilidade do recurso (dinheiro)!</h2>
                                         <p>Nas vendas a prazo o dinheiro não estará disponível de imediato, porém a CRPay, garantindo o pagamento, lhe permite comprometer seus recebíveis imediatamente após a confirmação do pagamento, de forma simples e desburocratizada.</p>
                                     </div>
+                                    <h1>Disponibilidade de Recursos!</h1>
                                 </div>
                                 <div class="card_item">
-                                    <h1>Title</h1>
-                                    <div class="hidden_content">
-                                        <h2>Garantia de recebimento</h2>
+                                    <div class="hidden">
+                                        <h2>Garantia de recebimento!</h2>
                                         <p>A CRPay garante o recebimento de toda transação feito pelo sistema a um preço mais competitivo que a operadora de cartão.</p>
                                     </div>
+                                    <h1>Garantia!</h1>
                                 </div>
                                 <div class="card_item">
-                                    <h1>Title</h1>
-                                    <div class="hidden_content">
+                                    <div class="hidden">
                                         <h2>Garantia de vantagem competitiva em relação aos concorrentes</h2>
                                         <p>Largue na frente de seus concorrentes, reduza custos financeiros e incremente seus lucros de forma sustentável e verticalizada.</p>
                                     </div>
+                                    <h1>Vantagem Competitiva!</h1>
+                                </div>
+                            </div>
+                            <div class="hidden_card">
+                                <div class="border"></div>
+                                <div class="hidden_content">
+                                    <div class='close_btn'>
+                                        <span class="first_bar"></span>
+                                        <span class="second_bar"></span>
+                                    </div>
+                                    <div class="hidden_text"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> -->
                 <section id="tarifas_beneficios" class="first_color">
                     <div class="content l_r">
                         <h1 class="page_title">Tarifas e Benefícios</h1>
                         <div class="content_container">
+                            <img  class='transfer' src="/img/online_money_transfer.png" alt="">
                             <div class="text_container">
-                                <h2>Tarifas</h2>
-                                <h2>A CRPay cobra uma tarifa de cada movimentação realizada no sistema, segue abaixo :</h2>
-                                <h3>Vendas/Recebimentos no cartão de crédito :</h3>
-                                <p>Pessoa Física: 0%</p>
-                                <p>Jurídica: 0%</p>
-                                <h3>Vendas/Recebimentos via Transferência Interna :</h3>
-                                <p>Pessoa Física: 0%</p>
-                                <p>Jurídica: 0%</p>
-                                <h3>Vendas/Recebimentos via Boleto CRPay:</h3>
-                                <P>Pessoa Física:</P>
-                                <p>Se o boleto for pago antes da data de vencimento e for maior ou igual a R$ 100,00, custo R$ 0,00. Caso contrário, R$ 2,50 por boleto.</p>
-                                <p>Pessoa Jurídica:</p>
-                                <p>Se o boleto for pago antes da data de vencimento e for maior ou igual a R$ 100,00, custo R$ 0,00. Caso contrário, R$ 2,50 por boleto.</p>
-                                <p>Seu dinheiro rende na CRPay 1% a.m.</p>
-
-                                <h2>Benefícios</h2>
-                            	<h3>Pagamento no cartão :</h3>
-                                <p>Receba até 10% (d+365) de cashback ao realizar pagamentos em nossa rede credenciada.</p>
-                                <p>Boleto:</p>
-                                <p>Receba até 10% (d+365) de cashback ao realizar pagamentos em nossa rede credenciada.</p>
-                            	<p>Seu dinheiro rende na CRPay 1% a.m.</p>
+                                <div class="estrutura">
+                                    <div class="coluna">
+                                        <h1>Tarifas</h1>
+                                        <p>A CRPay cobra uma tarifa de cada movimentação realizada no sistema</p>
+                                    </div>
+                                    <div class="coluna">
+                                        <h2>Vendas/Recebimentos no cartão de crédito :</h2>
+                                        <div class="linha">
+                                            <p>Pessoa Física: 0%</p>
+                                            <span></span>
+                                            <p>Jurídica: 0%</p>
+                                        </div>
+                                    </div>
+                                    <div class="coluna">
+                                        <h2>Vendas/Recebimentos via Transferência Interna :</h2>
+                                        <div class="linha">
+                                            <p>Pessoa Física: 0%</p>
+                                            <span></span>
+                                            <p>Jurídica: 0%</p>
+                                        </div>
+                                        <div>
+                                            <h2>Vendas/Recebimentos via Boleto CRPay:</h2>
+                                            
+                                            <p>Se o boleto for pago antes da data de vencimento e for maior ou igual a R$ 100,00, custo R$ 0,00. Caso contrário, R$ 2,50 por boleto.</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="img_container">
-                                <img src="/img/online_money_transfer.png" alt="">
+                                <div class='estrutura'>
+                                    <div class="coluna">
+                                        <h1>Benefícios</h1>
+                                    </div>
+                                    <div class="coluna">
+                                        <h2>Pagamento no cartão :</h2>
+                                        <p>Receba até 10% (d+365) de cashback ao realizar pagamentos em nossa rede credenciada.</p>
+                                    </div>
+                                    <div class="coluna">
+                                        <h2>Boleto:</h2>
+                                        <p>Receba até 10% (d+365) de cashback ao realizar pagamentos em nossa rede credenciada.</p>
+                                    </div>
+                                    <div class='linha'>
+                                        <h1>Seu dinheiro rende 1% ao mês!</h1>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
