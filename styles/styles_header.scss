@@ -21,10 +21,6 @@
     text-decoration: none;
 }
 
-p {
-    font-size: 14x;
-}
-
 body {
     padding: 0;
     margin: 0;
@@ -62,6 +58,19 @@ header {
 
 .logo_name, .logo, .name {
     background: none;
+}
+
+.logo_name .name {
+    margin: 4px 0 0 0;
+    height: auto;
+    width: 90px;
+}
+.logo_name .logo {
+    margin-top: 10px;
+}
+.logo_name .logo svg {
+    position: relative;
+    height: 45px;
 }
 
 .gradient:hover {
@@ -143,21 +152,8 @@ header button:focus {
 }
 
 .projects button:focus i, .contact button:focus i {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-}
-
-header .logo_name .name {
-    margin: 4px 0 0 3px;
-    height: auto;
-    width: 90px;
-}
-header .logo_name .logo {
-    margin-top: 10px;
-}
-header .logo_name .logo svg {
-    position: relative;
-    height: 45px;
+    transform: translateY(-50%) rotate(45deg);
+    -webkit-transform: translateY(-50%) rotate(45deg);
 }
 
 /* Styles for the middle Container */
@@ -183,4 +179,15 @@ header .logo_name .logo svg {
     50% {background-image: linear-gradient(90deg, var(--nav--bars), var(--box--highlight) 17%, var(--box--highlight) 83%, var(--nav--bars));}
     75% {background-image: linear-gradient(90deg, var(--nav--bars), var(--box--highlight) 12%, var(--box--highlight) 88%, var(--nav--bars));}
     100% {background-image: linear-gradient(90deg, var(--nav--bars), var(--box--highlight) 2%, var(--box--highlight) 98%, var(--nav--bars));}
+}
+
+@media (max-width:560px) {
+    .logo {
+        display: none;
+    }
+
+    .logo_name {
+        margin: 0 2px 0 5px;
+        transform: scale(0.9)
+    }
 }
