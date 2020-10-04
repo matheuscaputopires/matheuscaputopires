@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:600");
+:root {
+  /* new colors */
+  --nav--bars: rgb(52, 147, 179);
+  --submenus: rgb(112, 157, 172);
+  --text: black;
+  --text--highlight: #4F4F4F;
+  --box--highlight: #56cbf298;
+  --icon--color: rgb(1, 1, 75);
+  --shaddow--color: gray;
+  --almost-white: #f0f0f0;
+  --border--color: darkblue;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+p {
+  font-size: 14x;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: var(--almost-white);
+  overflow: hidden;
+  z-index: -1;
+}
+
+/* Header Styles */
+header {
+  width: 100vw;
+  height: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: var(--nav--bars);
+}
+
+.logo_name {
+  margin: 0 10px 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: none;
+  cursor: pointer;
+}
+
+.logo_name, .logo, .name {
+  background: none;
+}
+
+.gradient:hover {
+  -webkit-animation: gradient 0.1s;
+          animation: gradient 0.1s;
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--nav--bars)), color-stop(var(--box--highlight)), to(var(--nav--bars)));
+  background-image: linear-gradient(90deg, var(--nav--bars), var(--box--highlight), var(--nav--bars));
+}
+
+.projects, .contact, .home, .sign_in {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+header button {
+  height: 100%;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.projects button:focus + nav, .contact button:focus + nav {
+  opacity: 1;
+  pointer-events: all;
+  -webkit-transform: translate(-50%, 15px);
+          transform: translate(-50%, 15px);
+}
+
+.projects nav, .contact nav {
+  background-color: var(--submenus);
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin-top: 1px;
+  width: 250px;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.projects a, .contact a {
+  width: 100%;
+  height: 3em;
+  margin: 5px 1em;
+  text-decoration: none;
+  -webkit-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dropdown_links a:hover {
+  background-color: var(--box--highlight);
+  border-radius: 8px;
+}
+
+header button:focus {
+  border-color: transparent;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-animation: gradientSelection 0.1s;
+          animation: gradientSelection 0.1s;
+  background-color: var(--box--highlight);
+  border-radius: 5px;
+}
+
+.projects button:focus + div, .contact button:focus + div {
+  opacity: 1;
+  pointer-events: all;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.projects button:focus i, .contact button:focus i {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+header .logo_name .name {
+  margin: 4px 0 0 3px;
+  height: auto;
+  width: 90px;
+}
+
+header .logo_name .logo {
+  margin-top: 10px;
+}
+
+header .logo_name .logo svg {
+  position: relative;
+  height: 45px;
+}
+
+/* Styles for the middle Container */
+.middle_container {
+  background-color: lightgrey;
+  height: calc(100vh - 45px);
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* Animations */
+@-webkit-keyframes gradient {
+  0% {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--nav--bars)), color-stop(50%, var(--nav--bars)), color-stop(50%, var(--box--highlight)), color-stop(50%, var(--nav--bars)), to(var(--nav--bars)));
+    background-image: linear-gradient(90deg, var(--nav--bars), var(--nav--bars) 50%, var(--box--highlight) 50%, var(--nav--bars) 50%, var(--nav--bars));
+  }
+  25% {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--nav--bars)), color-stop(35%, var(--nav--bars)), color-stop(var(--box--highlight)), color-stop(75%, var(--nav--bars)), to(var(--nav--bars)));
+    background-image: linear-gradient(90deg, var(--nav--bars), var(--nav--bars) 35%, var(--box--highlight), var(--nav--bars) 75%, var(--nav--bars));
+  }
+  50% {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--nav--bars)), color-stop(20%, var(--nav--bars)), color-stop(var(--box--highlight)), color-stop(80%, var(--nav--bars)), to(var(--nav--bars)));
+    background-image: linear-gradient(90deg, var(--nav--bars), var(--nav--bars) 20%, var(--box--highlight), var(--nav--bars) 80%, var(--nav--bars));
+  }
+  75% {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--nav--bars)), color-stop(10%, var(--nav--bars)), color-stop(var(--box--highlight)), color-stop(90%, var(--nav--bars)), to(var(--nav--bars)));
+    background-image: linear-gradient(90deg, var(--nav--bars), var(--nav--bars) 10%, var(--box--highlight), var(--nav--bars) 90%, var(--nav--bars));
+  }
+  100% {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--nav--bars)), color-stop(5%, var(--nav--bars)), color-stop(var(--box--highlight)), color-stop(95%, var(--nav--bars)), to(var(--nav--bars)));
+    background-image: linear-gradient(90deg, var(--nav--bars), var(--nav--bars) 5%, var(--box--highlight), var(--nav--bars) 95%, var(--nav--bars));
+  }
+}
+@keyframes gradient {
+  0% {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--nav--bars)), color-stop(50%, var(--nav--bars)), color-stop(50%, var(--box--highlight)), color-stop(50%, var(--nav--bars)), to(var(--nav--bars)));
+    background-image: linear-gradient(90deg, var(--nav--bars), var(--nav--bars) 50%, var(--box--highlight) 50%, var(--nav--bars) 50%, var(--nav--bars));
+  }
+  25% {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--nav--bars)), color-stop(35%, var(--nav--bars)), color-stop(var(--box--highlight)), color-stop(75%, var(--nav--bars)), to(var(--nav--bars)));
+    background-image: linear-gradient(90deg, var(--nav--bars), var(--nav--bars) 35%, var(--box--highlight), var(--nav--bars) 75%, var(--nav--bars));
+  }
+  50% {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--nav--bars)), color-stop(20%, var(--nav--bars)), color-stop(var(--box--highlight)), color-stop(80%, var(--nav--bars)), to(var(--nav--bars)));
+    background-image: linear-gradient(90deg, var(--nav--bars), var(--nav--bars) 20%, var(--box--highlight), var(--nav--bars) 80%, var(--nav--bars));
+  }
+  75% {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--nav--bars)), color-stop(10%, var(--nav--bars)), color-stop(var(--box--highlight)), color-stop(90%, var(--nav--bars)), to(var(--nav--bars)));
+    background-image: linear-gradient(90deg, var(--nav--bars), var(--nav--bars) 10%, var(--box--highlight), var(--nav--bars) 90%, var(--nav--bars));
+  }
+  100% {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--nav--bars)), color-stop(5%, var(--nav--bars)), color-stop(var(--box--highlight)), color-stop(95%, var(--nav--bars)), to(var(--nav--bars)));
+    background-image: linear-gradient(90deg, var(--nav--bars), var(--nav--bars) 5%, var(--box--highlight), var(--nav--bars) 95%, var(--nav--bars));
+  }
+}
+
+@-webkit-keyframes gradientSelection {
+  0% {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--nav--bars)), color-stop(35%, var(--box--highlight)), color-stop(65%, var(--box--highlight)), to(var(--nav--bars)));
+    background-image: linear-gradient(90deg, var(--nav--bars), var(--box--highlight) 35%, var(--box--highlight) 65%, var(--nav--bars));
+  }
+  25% {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--nav--bars)), color-stop(30%, var(--box--highlight)), color-stop(70%, var(--box--highlight)), to(var(--nav--bars)));
+    background-image: linear-gradient(90deg, var(--nav--bars), var(--box--highlight) 30%, var(--box--highlight) 70%, var(--nav--bars));
+  }
+  35% {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--nav--bars)), color-stop(22%, var(--box--highlight)), color-stop(78%, var(--box--highlight)), to(var(--nav--bars)));
+    background-image: linear-gradient(90deg, var(--nav--bars), var(--box--highlight) 22%, var(--box--highlight) 78%, var(--nav--bars));
+  }
+  50% {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--nav--bars)), color-stop(17%, var(--box--highlight)), color-stop(83%, var(--box--highlight)), to(var(--nav--bars)));
+    background-image: linear-gradient(90deg, var(--nav--bars), var(--box--highlight) 17%, var(--box--highlight) 83%, var(--nav--bars));
+  }
+  75% {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--nav--bars)), color-stop(12%, var(--box--highlight)), color-stop(88%, var(--box--highlight)), to(var(--nav--bars)));
+    background-image: linear-gradient(90deg, var(--nav--bars), var(--box--highlight) 12%, var(--box--highlight) 88%, var(--nav--bars));
+  }
+  100% {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--nav--bars)), color-stop(2%, var(--box--highlight)), color-stop(98%, var(--box--highlight)), to(var(--nav--bars)));
+    background-image: linear-gradient(90deg, var(--nav--bars), var(--box--highlight) 2%, var(--box--highlight) 98%, var(--nav--bars));
+  }
+}
+
+@keyframes gradientSelection {
+  0% {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--nav--bars)), color-stop(35%, var(--box--highlight)), color-stop(65%, var(--box--highlight)), to(var(--nav--bars)));
+    background-image: linear-gradient(90deg, var(--nav--bars), var(--box--highlight) 35%, var(--box--highlight) 65%, var(--nav--bars));
+  }
+  25% {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--nav--bars)), color-stop(30%, var(--box--highlight)), color-stop(70%, var(--box--highlight)), to(var(--nav--bars)));
+    background-image: linear-gradient(90deg, var(--nav--bars), var(--box--highlight) 30%, var(--box--highlight) 70%, var(--nav--bars));
+  }
+  35% {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--nav--bars)), color-stop(22%, var(--box--highlight)), color-stop(78%, var(--box--highlight)), to(var(--nav--bars)));
+    background-image: linear-gradient(90deg, var(--nav--bars), var(--box--highlight) 22%, var(--box--highlight) 78%, var(--nav--bars));
+  }
+  50% {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--nav--bars)), color-stop(17%, var(--box--highlight)), color-stop(83%, var(--box--highlight)), to(var(--nav--bars)));
+    background-image: linear-gradient(90deg, var(--nav--bars), var(--box--highlight) 17%, var(--box--highlight) 83%, var(--nav--bars));
+  }
+  75% {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--nav--bars)), color-stop(12%, var(--box--highlight)), color-stop(88%, var(--box--highlight)), to(var(--nav--bars)));
+    background-image: linear-gradient(90deg, var(--nav--bars), var(--box--highlight) 12%, var(--box--highlight) 88%, var(--nav--bars));
+  }
+  100% {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--nav--bars)), color-stop(2%, var(--box--highlight)), color-stop(98%, var(--box--highlight)), to(var(--nav--bars)));
+    background-image: linear-gradient(90deg, var(--nav--bars), var(--box--highlight) 2%, var(--box--highlight) 98%, var(--nav--bars));
+  }
+}
+/*# sourceMappingURL=styles_header.css.map */
