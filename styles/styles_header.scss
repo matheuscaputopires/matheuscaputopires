@@ -100,7 +100,7 @@ header button {
     transform: translate(-50%, 15px);
 }
 
-.projects nav, .contact nav {
+.dropdown_links {
     background-color: var(--submenus);
     position: absolute;
     top: 30px;
@@ -118,12 +118,12 @@ header button {
     transition: all 0.4s ease;
 }
 
-.projects a, .contact a {
+.dropdown_links a, .dropdown_links button {
     width: 100%;
-    height: 3em;
+    height: 45px;
     margin: 5px 1em;
     text-decoration: none;
-    transition: background-color 0.2s ease-out;
+    transition: all 0.2s ease-out;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,6 +132,46 @@ header button {
 .dropdown_links a:hover {
     background-color: var(--box--highlight);
     border-radius: 8px;
+}
+
+.dropdown_links .sub_menu {
+    height: auto;
+    transition: all 0.4s ease;
+    width: 100%;
+}
+
+.sub_menu a {
+    height: 0px;
+    margin: 0px;
+    transition: all 0.4s ease;
+}
+
+.sub_menu p {
+    font-size: 0px;
+}
+
+.dropdown_links button:focus {
+    background-color: var(--box--highlight)
+}
+
+.dropdown_links button:focus i {
+    transform: translateY(-50%) rotate(45deg);
+    -webkit-transform: translateY(-50%) rotate(45deg);
+}
+
+.dropdown_links button:focus + .sub_menu {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--box--highlight);
+}
+
+.dropdown_links button:focus + .sub_menu a {
+    height: 35px;
+    margin: 0px;
+}
+
+.dropdown_links button:focus + .sub_menu p {
+    font-size: 12px;
 }
 
 header button:focus {
@@ -165,15 +205,23 @@ header button:focus {
 }
 
 .hamburger_container .hamburger_selector {
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 50%;
+    transform: translateX(-50%);
     margin: 0;
     height: 45px;
     width: 45px;
     opacity: 0;
     z-index: 9;
     cursor: pointer;
+}
+.hamburger_container .toggle_btn {
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 45px;
 }
 
 .hamburger_selector:checked {
@@ -186,21 +234,33 @@ header button:focus {
 }
 
 .hamburger_selector:checked ~ .toggle_btn .round {
-    height: 35px;
-    width: 35px;
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
 }
 
 .hamburger_selector:checked ~ .toggle_btn .shrink {
     width: 0px;
+    height: 0px;
+}
+
+.hamburger_container .dropdown_links {
+    position: fixed;
+}
+
+.hamburger_selector:checked ~ .dropdown_links {
+    opacity: 1;
+    position: fixed;
+    pointer-events: all;
+    transform: translate(-50%, 15px);
 }
 
 .hamburger_container .hamburger {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    margin: 0;
     left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
     width: 45px;
     display: flex;
     flex-direction: column;
@@ -232,6 +292,13 @@ header button:focus {
         align-items: center;
         justify-content: center;
         position: relative;
+    }
+
+    .sign_in a {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
     }
 }
 

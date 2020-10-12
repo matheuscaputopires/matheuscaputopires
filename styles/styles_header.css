@@ -122,7 +122,7 @@ header button {
           transform: translate(-50%, 15px);
 }
 
-.projects nav, .contact nav {
+.dropdown_links {
   background-color: var(--submenus);
   position: absolute;
   top: 30px;
@@ -149,13 +149,13 @@ header button {
   transition: all 0.4s ease;
 }
 
-.projects a, .contact a {
+.dropdown_links a, .dropdown_links button {
   width: 100%;
-  height: 3em;
+  height: 45px;
   margin: 5px 1em;
   text-decoration: none;
-  -webkit-transition: background-color 0.2s ease-out;
-  transition: background-color 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -170,6 +170,53 @@ header button {
 .dropdown_links a:hover {
   background-color: var(--box--highlight);
   border-radius: 8px;
+}
+
+.dropdown_links .sub_menu {
+  height: auto;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  width: 100%;
+}
+
+.sub_menu a {
+  height: 0px;
+  margin: 0px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.sub_menu p {
+  font-size: 0px;
+}
+
+.dropdown_links button:focus {
+  background-color: var(--box--highlight);
+}
+
+.dropdown_links button:focus i {
+  transform: translateY(-50%) rotate(45deg);
+  -webkit-transform: translateY(-50%) rotate(45deg);
+}
+
+.dropdown_links button:focus + .sub_menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: var(--box--highlight);
+}
+
+.dropdown_links button:focus + .sub_menu a {
+  height: 35px;
+  margin: 0px;
+}
+
+.dropdown_links button:focus + .sub_menu p {
+  font-size: 12px;
 }
 
 header button:focus {
@@ -206,15 +253,26 @@ header button:focus {
 }
 
 .hamburger_container .hamburger_selector {
-  position: absolute;
+  position: fixed;
   top: 0px;
   left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   margin: 0;
   height: 45px;
   width: 45px;
   opacity: 0;
   z-index: 9;
   cursor: pointer;
+}
+
+.hamburger_container .toggle_btn {
+  position: fixed;
+  top: 0px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 45px;
 }
 
 .hamburger_selector:checked {
@@ -227,22 +285,35 @@ header button:focus {
 }
 
 .hamburger_selector:checked ~ .toggle_btn .round {
-  height: 35px;
-  width: 35px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
 }
 
 .hamburger_selector:checked ~ .toggle_btn .shrink {
   width: 0px;
+  height: 0px;
+}
+
+.hamburger_container .dropdown_links {
+  position: fixed;
+}
+
+.hamburger_selector:checked ~ .dropdown_links {
+  opacity: 1;
+  position: fixed;
+  pointer-events: all;
+  -webkit-transform: translate(-50%, 15px);
+          transform: translate(-50%, 15px);
 }
 
 .hamburger_container .hamburger {
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  margin: 0;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  margin: 0;
   width: 45px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -289,6 +360,13 @@ header button:focus {
         -ms-flex-pack: center;
             justify-content: center;
     position: relative;
+  }
+  .sign_in a {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 }
 
