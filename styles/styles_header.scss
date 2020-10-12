@@ -41,7 +41,7 @@ header {
     height: 45px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
     background-color: var(--nav--bars);
 }
@@ -156,6 +156,85 @@ header button:focus {
     -webkit-transform: translateY(-50%) rotate(45deg);
 }
 
+.mobile {
+    display: none;
+}
+
+.hamburger_container {
+    width: 100%;
+}
+
+.hamburger_container .hamburger_selector {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    margin: 0;
+    height: 45px;
+    width: 45px;
+    opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+}
+
+.hamburger_selector:checked {
+    margin: none;
+    padding: none;
+    background-color: transparent;
+    color: transparent;
+    border: none;
+    outline: none;
+}
+
+.hamburger_selector:checked ~ .toggle_btn .round {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+
+.hamburger_selector:checked ~ .toggle_btn .shrink {
+    width: 0px;
+}
+
+.hamburger_container .hamburger {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    left: 50%;
+    width: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 5px;
+    background-color: var(--text);
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.hamburger .middle {
+    background-color: transparent;
+}
+
+@media (max-width:509px) {
+    .desktop {
+        display: none;
+    }
+    
+    .mobile {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+}
+
 /* Styles for the middle Container */
 .middle_container {
     background-color: lightgrey;
@@ -181,7 +260,7 @@ header button:focus {
     100% {background-image: linear-gradient(90deg, var(--nav--bars), var(--box--highlight) 2%, var(--box--highlight) 98%, var(--nav--bars));}
 }
 
-@media (max-width:560px) {
+@media (max-width:575px) {
     .logo {
         display: none;
     }

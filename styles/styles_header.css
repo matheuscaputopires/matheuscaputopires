@@ -48,9 +48,9 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   background-color: var(--nav--bars);
 }
 
@@ -197,6 +197,101 @@ header button:focus {
   -webkit-transform: translateY(-50%) rotate(45deg);
 }
 
+.mobile {
+  display: none;
+}
+
+.hamburger_container {
+  width: 100%;
+}
+
+.hamburger_container .hamburger_selector {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  margin: 0;
+  height: 45px;
+  width: 45px;
+  opacity: 0;
+  z-index: 9;
+  cursor: pointer;
+}
+
+.hamburger_selector:checked {
+  margin: none;
+  padding: none;
+  background-color: transparent;
+  color: transparent;
+  border: none;
+  outline: none;
+}
+
+.hamburger_selector:checked ~ .toggle_btn .round {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
+.hamburger_selector:checked ~ .toggle_btn .shrink {
+  width: 0px;
+}
+
+.hamburger_container .hamburger {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin: 0;
+  left: 50%;
+  width: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 5px;
+  background-color: var(--text);
+  border-radius: 10px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.hamburger .middle {
+  background-color: transparent;
+}
+
+@media (max-width: 509px) {
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: relative;
+  }
+}
+
 /* Styles for the middle Container */
 .middle_container {
   background-color: lightgrey;
@@ -305,7 +400,7 @@ header button:focus {
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 575px) {
   .logo {
     display: none;
   }
