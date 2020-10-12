@@ -368,6 +368,26 @@ header button:focus {
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
   }
+  .gradient {
+    background-color: transparent;
+    -webkit-animation: none;
+            animation: none;
+  }
+  .gradient:hover {
+    background-color: var(--box--highlight);
+    -webkit-animation: none;
+            animation: none;
+  }
+  header button:focus {
+    -webkit-animation: none;
+            animation: none;
+    background-color: transparent;
+  }
+  .toggle_btn {
+    -webkit-animation: none;
+            animation: none;
+    background-color: transparent;
+  }
 }
 
 /* Styles for the middle Container */

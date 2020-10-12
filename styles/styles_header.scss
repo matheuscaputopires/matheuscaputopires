@@ -300,6 +300,26 @@ header button:focus {
         right: 10px;
         transform: translateY(-50%);
     }
+
+    .gradient {
+        background-color: transparent;
+        animation: none;
+    }
+    
+    .gradient:hover {
+        background-color: var(--box--highlight);
+        animation: none;
+    }
+
+    header button:focus {
+        animation: none;
+        background-color: transparent;
+    }
+
+    .toggle_btn {
+        animation: none;
+        background-color: transparent;
+    }
 }
 
 /* Styles for the middle Container */
